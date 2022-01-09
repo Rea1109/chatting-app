@@ -1,0 +1,145 @@
+* {
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+h2 {
+  display: inline-block;
+}
+
+hr {
+  width: 100%;
+  border: 1px solid #ebebeb;
+  margin: 10px 0px 10px 0px;
+}
+
+ul {
+  display: flex;
+  align-items: center;
+  padding: 0px;
+  margin: 20px 0px 20px 0px;
+}
+
+li {
+  display: inline-block;
+  margin-left: 5px;
+  font-size: 14px;
+  color: #666666;
+  list-style: none;
+}
+
+input {
+  width: 380px;
+  height: 32px;
+  background: white;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+button {
+  width: 56px;
+  height: 32px;
+  background: white;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  color: black;
+}
+
+.chat_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.inner {
+  width: 500px;
+  padding: 20px;
+  background: #f7f7f7;
+  border: 1px solid #dddddd;
+}
+
+.chat_title {
+  margin-right: 3px;
+  font-size: 16px;
+  color: #324e86;
+}
+
+.user_list_icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url("../public/images/user-list-icon.png");
+  background-size: cover;
+  background-position: center center;
+}
+
+.chat_info {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+  color: #555555;
+}
+
+.chat_info span {
+  margin-bottom: 5px;
+  display: block;
+}
+
+.chat_list {
+  height: 300px;
+  margin-top: 20px;
+  overflow: auto;
+}
+
+.chat_profile {
+  width: 40px;
+  height: 40px;
+  background-image: url("../public/images/user-profile-icon.png");
+  background-size: cover;
+}
+
+.chat_other {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.chat_other span {
+  position: absolute;
+  top: 0px;
+  margin-left: 45px;
+}
+
+.chat_other p {
+  position: absolute;
+  top: 20px;
+  margin-left: 45px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #c4c4c4;
+  color: black;
+}
+
+.chat_my {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.chat_my span {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #c4c4c4;
+  color: black;
+}
+
+.chat_footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #dddddd;
+}

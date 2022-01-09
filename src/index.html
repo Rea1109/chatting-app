@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/chat.css" />
+    <title>Chatting</title>
+  </head>
+  <body>
+    <div class="chat_wrapper">
+      <div class="inner">
+        <head>
+          <!--채티방 이름-->
+          <h2 class="chat_title">PairingMate</h2>
+          <span>채팅룸</span>
+          <ul class="user_list">
+            <!--채팅 참여 인원 목록-->
+          </ul>
+        </head>
+        <hr />
+        <!--연결 정보-->
+        <div class="chat_info"></div>
+        <!--채팅 목록-->
+        <div class="chat_list"></div>
+        <footer class="chat_footer">
+          <input id="input_box" type="text" />
+          <button class="send-button">전송</button>
+        </footer>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.2/qs.min.js"
+      integrity="sha256-TDxXjkAUay70ae/QJBEpGKkpVslXaHHayklIVglFRT4="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="js/chat.js"></script>
+  </body>
+</html>
