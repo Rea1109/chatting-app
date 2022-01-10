@@ -15,14 +15,13 @@ socket.emit("joinRoom", { user, room });
 
 // users
 socket.on("roomUsers", (data) => {
-  console.log(data);
   outputUsers(data.users);
 });
 
 // 서버부터 메시지
 socket.on("message", (message) => {
-  console.log(message);
   outputMessage(message);
+  chatList.scrollTop = chatList.scrollHeight;
 });
 
 // 채팅 메시지
@@ -40,7 +39,17 @@ socket.on("chatMessage", (msg) => {
     <p>${msg.msg}</p>`;
     chatList.appendChild(div);
   }
+
+  chatList.scrollTop = chatList.scrollHeight;
 });
+
+const test = () => {
+  if (window.event.keyCode == 13 && inputBox.value !== "") {
+    const msg = inputBox.value;
+    socket.emit("chatMessage", { user: user, msg: msg });
+    inputBox.value = "";
+  }
+};
 
 sendButton.addEventListener("click", () => {
   const msg = inputBox.value;
@@ -52,8 +61,8 @@ sendButton.addEventListener("click", () => {
 const outputMessage = (message) => {
   const span = document.createElement("span");
   span.innerHTML = message;
-
-  chatInfo.appendChild(span);
+  span.classList.add("chat_info");
+  chatList.appendChild(span);
 };
 
 const outputUsers = (users) => {

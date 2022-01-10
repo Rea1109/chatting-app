@@ -35,7 +35,6 @@ io.on("connection", (socket) => {
 
   socket.on("chatMessage", (msg) => {
     const user = getCurrentUser(socket.id);
-    console.log(msg);
 
     io.to(user.room).emit("chatMessage", msg);
   });
@@ -50,4 +49,4 @@ io.on("connection", (socket) => {
   });
 });
 
-server.listen(3000, () => console.log("server is running"));
+server.listen(5000, () => console.log("server is running"));
