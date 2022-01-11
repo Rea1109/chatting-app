@@ -43,7 +43,7 @@ socket.on("chatMessage", (msg) => {
   chatList.scrollTop = chatList.scrollHeight;
 });
 
-const test = () => {
+const sendMessage = () => {
   if (window.event.keyCode == 13 && inputBox.value !== "") {
     const msg = inputBox.value;
     socket.emit("chatMessage", { user: user, msg: msg });

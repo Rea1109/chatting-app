@@ -19,11 +19,15 @@
           </ul>
         </head>
         <hr />
-
         <!--채팅 목록-->
         <div class="chat_list"></div>
         <footer class="chat_footer">
-          <input id="input_box" type="text" onkeyup="test()" />
+          <input
+            id="input_box"
+            type="text"
+            placeholder="메시지를 입력해주세요"
+            onkeyup="sendMessage()"
+          />
           <button class="send-button">전송</button>
         </footer>
       </div>
