@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname, "src")));
 
 io.on("connection", (socket) => {
   socket.on("joinRoom", (data) => {
-    const user = userJoin(socket.id, data.user, data.room);
+    const user = userJoin(socket.id, data.user, data.room, data.img);
 
     socket.join(user.room);
 
@@ -36,7 +36,7 @@ io.on("connection", (socket) => {
   socket.on("chatMessage", (msg) => {
     const user = getCurrentUser(socket.id);
 
-    io.to(user.room).emit("chatMessage", msg);
+    io.to(user.room).emit("chatMessage", { msg: msg, img: user.img });
   });
 
   socket.on("disconnect", () => {

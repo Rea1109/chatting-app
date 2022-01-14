@@ -1,4 +1,4 @@
-const { user, room } = Qs.parse(location.search, {
+const { user, room, img } = Qs.parse(location.search, {
   ignoreQueryPrefix: true,
 });
 
@@ -11,7 +11,7 @@ const inputBox = document.querySelector("#input_box");
 const sendButton = document.querySelector(".send-button");
 
 // join
-socket.emit("joinRoom", { user, room });
+socket.emit("joinRoom", { user, room, img });
 
 // users
 socket.on("roomUsers", (data) => {
@@ -25,22 +25,24 @@ socket.on("message", (message) => {
 });
 
 // 채팅 메시지
-socket.on("chatMessage", (msg) => {
-  if (user === msg.user) {
+socket.on("chatMessage", (data) => {
+  if (user === data.msg.user) {
     const div = document.createElement("div");
     div.classList.add("chat_my");
-    div.innerHTML = `<span>${msg.msg}</span>`;
+    div.innerHTML = `<span>${data.msg.msg}</span>`;
     chatList.appendChild(div);
   } else {
     const div = document.createElement("div");
     div.classList.add("chat_other");
-    div.innerHTML = `<div class="chat_profile"></div>
-    <span>${msg.user}</span>
-    <p>${msg.msg}</p>`;
+    div.innerHTML = `<div class="chat_profile">
+    <img src="https://storage.googleapis.com/${data.img}" alt="" />
+  </div>
+  <span>${data.msg.user}</span>
+  <p>${data.msg.msg}</p>`;
     chatList.appendChild(div);
   }
 
-  chatList.scrollTop = chatList.scrollHeight;
+  // chatList.scrollTop = chatList.scrollHeight;
 });
 
 const sendMessage = () => {
