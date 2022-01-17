@@ -42,7 +42,7 @@ socket.on("chatMessage", (data) => {
     chatList.appendChild(div);
   }
 
-  // chatList.scrollTop = chatList.scrollHeight;
+  chatList.scrollTop = chatList.scrollHeight;
 });
 
 const sendMessage = () => {
